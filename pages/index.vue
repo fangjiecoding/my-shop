@@ -26,19 +26,16 @@
 
 	const homeStore = useHomeStore();
 	const { banners, categorys } = storeToRefs(homeStore);
-	watchEffect(() => {
-		console.log(categorys, 111);
-	});
 
 	function handleItemClick(item: ICategory) {
-		// console.log(item.title);
+		console.log(item.title);
 		// // 进行页面跳转 -> 编程导航 ->不利于SEO
-		// return navigateTo({
-		// 	path: "/oppo-detail",
-		// 	query: {
-		// 		type: item.type, // oppo 、air、watch、tablet
-		// 	},
-		// });
+		return navigateTo({
+			path: "/oppo-detail",
+			query: {
+				type: item.type, // oppo 、air、watch、tablet
+			},
+		});
 	}
 </script>
 
